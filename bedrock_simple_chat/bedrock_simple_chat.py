@@ -4,6 +4,7 @@ import json
 from botocore.exceptions import ClientError
 from ddtrace.llmobs import LLMObs
 from prompt_toolkit import prompt
+from dotenv import load_dotenv
 
 
 def create_bedrock_client(region="us-east-1"):
@@ -74,13 +75,18 @@ def main():
     """
     Main function to handle the multi-turn chat interaction with the LLM.
     """
-    # Load the configuration file
-    with open("config.json") as f:
-        config = json.load(f)
+    # Load the .env file
+    load_dotenv()
+
+    # Retrieve configuration from environment variables
+    dd_api_key = os.getenv("DD_API_KEY")
+    if not dd_api_key:
+        print("ERROR: Datadog API key not found in environment variables.")
+        return
 
     LLMObs.enable(
-        ml_app="bedrock_simple_chat_auto_instrumentation",
-        api_key=config["dd_api_key"],
+        ml_app="bedrock_simple_chat",
+        api_key=dd_api_key,
         site="datadoghq.com",
         agentless_enabled=True,
         integrations_enabled=True

@@ -4,9 +4,6 @@ llm_env/
 # Logs and runtime files
 *.log
 
-# Sensitive configuration files
-config.json
-
 # macOS-specific files
 .DS_Store
 
@@ -32,3 +29,12 @@ build/
 
 # Test files
 test.py
+
+# Env files
+.env
+
+# Datadog static code analysis configuration
+static-analysis.datadog.yml
+
+# Datadog documentation used for RAG
+documentation/

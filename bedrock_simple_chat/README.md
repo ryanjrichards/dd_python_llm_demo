@@ -10,4 +10,6 @@ pip install -r requirements.txt
 2. AWS CLI: Install the AWS CLI and configure your credentials if not already done:
 aws configure
 
-3. Update config.json: Provide the Datadog API key in the config file
+3. AWS Bedrock: Request model access in your AWS instance
+
+4. Create .env file: Provide the Datadog API key .env file. Use example.env as reference
