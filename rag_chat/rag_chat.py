@@ -34,6 +34,26 @@ def initialize_weaviate():
     )
     return Weaviate(client, OpenAIEmbeddings())
 
+def populate_vector_db(client):
+    """
+    TODO: Populate the vector database with documents.
+    """
+    # Example code to add documents to Weaviate
+    # client.batch.add_data_object({
+    #     "class": "Document",
+    #     "properties": {
+    #         "text": "Your document text here"
+    #     }
+    # }, "Document")
+
+def retrieve_documents(query, retriever):
+    """
+    TODO: Retrieve documents from the vector database using the query.
+    """
+    # Example code to retrieve documents
+    # results = retriever.retrieve(query)
+    # return results
+
 def create_retrieval_qa(llm, retriever):
     """
     Creates a Retrieval-QA chain using LangChain.
@@ -73,6 +93,9 @@ def main():
     # Initialize Weaviate
     weaviate_client = initialize_weaviate()
 
+    # TODO: Populate the vector database
+    # populate_vector_db(weaviate_client)
+
     # Create the Retrieval-QA chain
     qa_chain = create_retrieval_qa(llm, weaviate_client.as_retriever())
 
@@ -83,6 +106,10 @@ def main():
         if user_input.lower() == "exit":
             print("Goodbye!")
             break
+
+        # TODO: Retrieve documents as part of the query process
+        # context = retrieve_documents(user_input, weaviate_client.as_retriever())
+        # response = qa_chain.run(user_input, context=context)
 
         # Run the question through the chain with observability
         with tracer.trace("langchain.chain.invoke", service="rag_system"):
