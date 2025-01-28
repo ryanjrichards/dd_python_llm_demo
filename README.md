@@ -42,4 +42,4 @@ To get started with this project, follow the instructions below:
 
 ## Contact
 
-For any questions or inquiries, please contact Ryan Richards at ryan.richards95@gmail.com
+For any questions or inquiries, please contact Ryan Richards at ryan.richards@datadoghq.com or ryan.richards95@gmail.com
