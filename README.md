@@ -2,13 +2,7 @@
 
 This project showcases the application of Datadog observability tools to various Large Language Model (LLM) systems. The goal is to demonstrate how Datadog can be used to monitor, analyze, and optimize the performance of different LLM implementations.
 
-## Project Structure
-
-The project is organized into several versions, each focusing on a different LLM system:
-
 - **Version 1:** Simple chatbot using Anthropic's Claude on AWS Bedrock
-- **Version 2:** RAG chatbot using OpenAI's ChatGPT and Weaviate
-- **Version 3:** [TBD]
 
 ## Getting Started
 
