@@ -2,10 +2,4 @@ awscli
 boto3
 botocore
 ddtrace
-prompt_toolkit
-langchain 
-openai 
-weaviate-client
 python-dotenv
-gitpython
-python-frontmatter
